@@ -1,0 +1,407 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('/assets/0-dogs-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #f3f3f3;
+    line-height: 1.6;
+    padding-top: 60px; /* Offset for fixed nav */
+    animation: fadeIn 1.5s ease-in-out;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(32, 32, 32, 0.9);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    height: 60px;
+    animation: slideDown 1s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+nav:hover {
+    background-color: rgba(40, 40, 40, 0.95);
+}
+
+/* Logo Styling */
+nav a img {
+    width: 70px; /* Ensures consistent size */
+    height: 70px; /* Ensures consistent size */
+    border-radius: 50%; /* Makes the logo circular */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adds depth to the logo */
+}
+
+/* Hover Effect for Logo */
+nav a img:hover {
+    transform: scale(1.1); /* Slightly enlarges the logo on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Enhances shadow on hover */
+    border: 2px solid #131212; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 30px;
+    
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f9f9f9;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: color 0.4s ease, background-color 0.4s ease, transform 0.3s ease;
+    font-weight: 500;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ffd700;
+    background-color: rgba(255, 223, 0, 0.25);
+    font-weight: bold;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    animation: fadeInDown 0.4s ease-in-out;
+}
+
+nav ul li ul li a {
+    color: #333;
+    padding: 0.8rem 1.2rem;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li ul li a:hover {
+    background-color: rgba(255, 223, 0, 0.15);
+    color: #222;
+    font-weight: bold;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 3rem 1rem;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #fbc531;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+    animation: fadeInDown 1.2s ease;
+}
+
+header p {
+    font-size: 1.8rem;
+    margin: 0 auto;
+    max-width: 900px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1.2s ease;
+}
+
+/* Content Section */
+.content {
+    max-width: 700px;
+    margin: 2.5rem auto;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #e0e0e0;
+    animation: scaleIn 1s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+}
+
+.content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #fbc531;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #f2f2f2;
+}
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 2.5rem auto;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #fbc531;
+    font-weight: 600;
+}
+
+form input,
+form textarea {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 10px rgba(255, 223, 0, 0.6);
+}
+
+form button {
+    padding: 1rem 2.5rem;
+    background-color: #ffd700;
+    color: #000;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #e6d374;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255, 223, 0, 0.6);
+}
+
+/* Lists */
+ul {
+    list-style-type: disc;
+    margin: 1rem 0 1rem 1.5rem;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Steps Section */
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background: rgba(50, 50, 50, 0.9);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 calc(45% - 2rem); /* Responsive sizing for cards */
+    max-width: 300px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #ffd700;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+.card p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Adoption Fees */
+#fees ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+#fees ul li {
+    background: rgba(255, 223, 0, 0.15);
+    border: 1px solid rgba(255, 223, 0, 0.3);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+    color: #f9f9f9;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    background-color: #444;
+    color: #ddd;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    border-top: 2px solid #fbc531;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    .content {
+        padding: 2rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .content {
+        padding: 1.5rem;
+    }
+
+    .footer {
+        text-align: left;
+    }
+}
